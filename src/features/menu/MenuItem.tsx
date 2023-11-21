@@ -1,6 +1,8 @@
 import { formatCurrency } from "../../utils/helpers";
 
-function MenuItem({ pizza }) {
+type Props = { pizza: Pizza };
+
+const MenuItem: React.FC<Props> = ({ pizza }) => {
   const { name, unitPrice, ingredients, soldOut, imageUrl } = pizza;
   return (
     <li>
@@ -14,6 +16,6 @@ function MenuItem({ pizza }) {
       </div>
     </li>
   );
-}
+};
 
 export default MenuItem;
