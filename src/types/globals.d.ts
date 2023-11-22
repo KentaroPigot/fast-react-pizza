@@ -28,12 +28,33 @@ declare global {
     phone: string;
     address: string;
     priority: boolean;
+    priorityPrice: number;
+    orderPrice: number;
     estimatedDelivery: string;
+    cart: Cart;
+    status: string;
+  };
+
+  type NewOrder = {
+    customer?: string;
+    phone?: string;
+    address?: string;
+    priority?: boolean;
     cart: Cart;
   };
 
-  type geoLocalisation = {
+  type GeoLocalisation = {
     latitude: string;
     longitude: string;
   };
+
+  type User = {
+    username: string | undefined;
+    status: "idle" | "loading" | "error";
+    position: GeoLocalisation | undefined;
+    address: string;
+    error: string;
+  };
+
+  type GeoLocation = { coords: { latitude: string; longitude: string } };
 }

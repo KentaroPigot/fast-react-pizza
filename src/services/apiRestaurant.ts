@@ -18,7 +18,7 @@ export async function getOrder(id: string) {
   return data;
 }
 
-export async function createOrder(newOrder: Item) {
+export async function createOrder(newOrder: NewOrder) {
   try {
     const res = await fetch(`${API_URL}/order`, {
       method: "POST",
@@ -36,7 +36,7 @@ export async function createOrder(newOrder: Item) {
   }
 }
 
-export async function updateOrder(id: string, updateObj: Item) {
+export async function updateOrder(id: string, updateObj: Partial<Order>) {
   try {
     const res = await fetch(`${API_URL}/order/${id}`, {
       method: "PATCH",
